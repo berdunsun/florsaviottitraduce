@@ -3,40 +3,206 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Servicios de Traducción</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Servicios de Traducción Profesional</title>
+
+<meta name="description" content="Servicios profesionales de traducción de documentos, interpretación y localización de contenidos.">
 
 <style>
 
 body{
-    margin:0;
-    background:#207E98;
-    font-family: Arial, Helvetica, sans-serif;
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#207E98;
+color:white;
+scroll-behavior:smooth;
 }
 
-/* contenedor de la imagen */
-.contenedor{
-    width:100%;
-    display:flex;
-    justify-content:center;
+/* estructura general */
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
 }
 
-/* imagen principal */
-.imagen-scroll{
-    width:100%;
-    max-width:1200px;
-    height:auto;
+/* títulos */
+
+h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+h2{
+font-size:36px;
+margin-bottom:40px;
+}
+
+/* texto */
+
+p{
+max-width:700px;
+font-size:20px;
+opacity:0.9;
+}
+
+/* botones */
+
+.boton{
+background:white;
+color:#207E98;
+padding:15px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+margin:10px;
+transition:0.3s;
+}
+
+.boton:hover{
+transform:scale(1.05);
+}
+
+/* grilla servicios */
+
+.servicios{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+width:80%;
+max-width:1000px;
+}
+
+.servicio{
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:15px;
+}
+
+/* animaciones */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
 }
 
 </style>
 </head>
 
+
 <body>
 
-<div class="contenedor">
+<!-- HERO -->
 
-<img src="hero-traduccion.png" class="imagen-scroll">
+<section>
+
+<h1 class="reveal">Servicios Profesionales de Traducción</h1>
+
+<p class="reveal">
+Precisión y calidad en cada palabra. Traducciones profesionales
+para documentos, sitios web y proyectos internacionales.
+</p>
+
+<div class="reveal">
+
+<a class="boton" href="#contacto">Solicitar cotización</a>
+
+<a class="boton" href="#servicios">Ver servicios</a>
 
 </div>
+
+</section>
+
+
+
+<!-- SERVICIOS -->
+
+<section id="servicios">
+
+<h2 class="reveal">Nuestros Servicios</h2>
+
+<div class="servicios">
+
+<div class="servicio reveal">
+<h3>Traducción de Documentos</h3>
+<p>Contratos, informes, manuales técnicos y documentación profesional.</p>
+</div>
+
+<div class="servicio reveal">
+<h3>Interpretación</h3>
+<p>Interpretación simultánea y consecutiva para reuniones y conferencias.</p>
+</div>
+
+<div class="servicio reveal">
+<h3>Localización Web</h3>
+<p>Adaptación de sitios web, software y contenidos digitales.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACTO -->
+
+<section id="contacto">
+
+<h2 class="reveal">¿Por qué elegirnos?</h2>
+
+<p class="reveal">
+Traductores profesionales, entregas puntuales y confidencialidad absoluta en cada proyecto.
+</p>
+
+<div class="reveal">
+
+<a class="boton" href="mailto:contacto@tusitio.com">
+Enviar consulta
+</a>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+function reveal(){
+
+var reveals = document.querySelectorAll(".reveal");
+
+for(var i=0;i<reveals.length;i++){
+
+var windowHeight = window.innerHeight;
+var elementTop = reveals[i].getBoundingClientRect().top;
+var elementVisible = 100;
+
+if(elementTop < windowHeight - elementVisible){
+reveals[i].classList.add("active");
+}
+
+}
+
+}
+
+window.addEventListener("scroll", reveal);
+
+reveal();
+
+</script>
+
 
 </body>
 </html>
