@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,10 +15,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-
-html{
-scroll-snap-type:y mandatory;
-}
 
 body{
 margin:0;
@@ -50,9 +47,13 @@ background:rgba(0,0,0,0.15);
 backdrop-filter:blur(6px);
 }
 
+/* LOGO */
+
 .logo img{
 height:55px;
 }
+
+/* MENU */
 
 nav{
 display:flex;
@@ -62,7 +63,7 @@ gap:35px;
 nav a{
 color:white;
 text-decoration:none;
-font-size:14px;
+font-size:11px;
 letter-spacing:1px;
 font-weight:600;
 opacity:0.9;
@@ -73,26 +74,16 @@ nav a:hover{
 opacity:1;
 }
 
-/* SECTIONS */
+/* HERO */
 
-section{
-height:100vh;
-scroll-snap-align:start;
-padding:120px 40px 80px 40px;
-box-sizing:border-box;
+.hero{
+min-height:100vh;
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
+padding:120px 40px 60px 40px;
 text-align:center;
 }
-
-h2{
-font-size:40px;
-margin-bottom:40px;
-}
-
-/* HERO */
 
 .hero-container{
 max-width:900px;
@@ -102,25 +93,24 @@ transform:translateY(-40px);
 h1{
 font-size:56px;
 margin-bottom:20px;
-opacity:0;
-animation:fadeHero 1.5s forwards;
-}
-
-@keyframes fadeHero{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
 }
 
 .subtitulo{
 font-size:22px;
 opacity:0.9;
 line-height:1.6;
+}
+
+/* SECCIONES */
+
+section{
+padding:120px 40px;
+text-align:center;
+}
+
+h2{
+font-size:40px;
+margin-bottom:40px;
 }
 
 /* SOBRE MI */
@@ -201,7 +191,7 @@ transition:0.3s;
 transform:scale(1.2);
 }
 
-/* ANIMACION SCROLL */
+/* ANIMACION */
 
 .reveal{
 opacity:0;
@@ -405,3 +395,4 @@ reveal();
 
 </body>
 </html>
+
